@@ -10,18 +10,16 @@ import org.testng.annotations.Test;
  * Created by 88lit on 2/28/2018.
  */
 public class LoginTest extends BeforeTest {
-
-    @BeforeMethod
-    public void getUrl(){
-        driver.get("https://www.fashionette.de/login");
-    }
+    //    @BeforeMethod
+//    public void getUrl(){
+//        driver.get("https://www.fashionette.de/login");
+//    }
 
     @Test
     public void loginTest() {
         String email = "asdasd";
         String pass = "asdad";
         new Login(driver).login(email, pass);
-
     }
 
     @AfterClass

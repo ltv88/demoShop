@@ -15,12 +15,18 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-chrome-driver</artifactId>
-            <version>3.3.0</version>
+            <version>3.9.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.9.1</version>
         </dependency>
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>6.8.7</version>
+            <version>6.14.2</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
@@ -28,16 +34,16 @@
         <plugins>
         <plugin>
             <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.3</version>
+            <version>3.7.0</version>
             <configuration>
                 <source>1.7</source>
                 <target>1.7</target>
             </configuration>
         </plugin>
         </plugins>
-        <resources>
-            <!-- <resource> <directory>src/test/resources</directory> </resource> -->
-        </resources>
+        <!--<resources>-->
+            <!--&lt;!&ndash; <resource> <directory>src/test/resources</directory> </resource> &ndash;&gt;-->
+        <!--</resources>-->
     </build>
 
 </project>

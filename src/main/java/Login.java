@@ -16,7 +16,7 @@ public class Login {
     }
 
 
-    private WebElement logo = driver.findElement(By.cssSelector(".header__logo"));
+    private WebElement logo = driver.findElement(By.cssSelector("a.header__logo:nth-child(1) > img.logo-claim"));
     private WebElement xButtonText = driver.findElement(By.cssSelector("//*[text()='Zurück']"));
     private WebElement xButton = driver.findElement(By.cssSelector(".box__close [class*='icon--cross-big-red']"));
     private WebElement loginTitle = driver.findElement(By.xpath("//*[text()='Login']"));
