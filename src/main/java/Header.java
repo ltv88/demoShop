@@ -19,40 +19,40 @@ public class Header extends Main {
     private SelenideElement logIn = $x("//a[@href='https://www.fashionette.de/login']");
     private SelenideElement search = $x("//div[@class='header__search-icon']");
 
-    public Header(){
+    public Header() {
     }
 
-    public Login openLoginPage(){
+    public Login openLoginPage() {
         logIn.click();
         return new Login();
     }
 
-    public void openSale(){
+    public void openSale() {
         sale.click();
     }
 
-    public void openNew(){
+    public void openNew() {
         newMerch.click();
     }
 
-    public void openSearh(){
+    public void openSearh() {
         search.click();
     }
 
-    public Main openHome(){
+    public Main openHome() {
         logo.click();
         return new Main();
     }
 
-    public void openBags(){
+    public void openBags() {
         bags.click();
     }
 
-    public void openDesigner(){
+    public void openDesigner() {
         designer.click();
     }
 
-    public void openFitsBag(){
+    public void openFitsBag() {
         fitsBag.click();
     }
 

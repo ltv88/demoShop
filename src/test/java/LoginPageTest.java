@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.*;
 /**
  * Created by 88lit on 2/28/2018.
  */
-public class LoginTest {
+public class LoginPageTest {
     @BeforeMethod
     public void getUrl(){
             Configuration.browser="chrome";
@@ -24,7 +24,6 @@ public class LoginTest {
         String email = "sergey@gmail.com";
         String pass = "123qwe";
         header.openLoginPage().login(email,pass);
-
     }
 
     @AfterClass
