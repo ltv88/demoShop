@@ -12,24 +12,23 @@ import static com.codeborne.selenide.Selenide.*;
  * Created by 88lit on 2/28/2018.
  */
 public class LoginTest {
-    //    @BeforeMethod
-//    public void getUrl(){
-//        driver.get("https://www.fashionette.de/login");
-//    }
+    @BeforeMethod
+    public void getUrl(){
+            Configuration.browser="chrome";
+            navigator.open("https://www.fashionette.de");
+    }
 
     @Test
     public void loginTest() {
+        Header header = new Header();
+        String email = "sergey@gmail.com";
+        String pass = "123qwe";
+        header.openLoginPage().login(email,pass);
 
-        Configuration.browser="chrome";
-        navigator.open("https://www.fashionette.de/login");
-        String email = "asdasd";
-        String pass = "asdad";
-        new Login().login(email, pass);
     }
-//
-//    @AfterClass
-//    public void closeDriver(){
-//        driver.quit();
-//        driver = null;
-//    }
+
+    @AfterClass
+    public void closeDriver(){
+        WebDriverRunner.closeWebDriver();
+    }
 }
