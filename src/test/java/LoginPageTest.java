@@ -1,3 +1,4 @@
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.WebDriver;
@@ -21,9 +22,9 @@ public class LoginPageTest {
     @Test
     public void loginTest() {
         Header header = new Header();
-        String email = "sergey@gmail.com";
-        String pass = "123qwe";
-        header.openLoginPage().login(email,pass);
+        String email = "meflt88@gmail.com";
+        String pass = "qwe123";
+        header.openLoginPage().login(email,pass).getSlogan().shouldHave(Condition.text("Hallo serge"));
     }
 
     @AfterClass
