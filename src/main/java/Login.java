@@ -27,7 +27,6 @@ public class Login extends Main {
     public Account login(String email, String pass) {
         eMailField.clear();
         eMailField.setValue(email);
-
         passField.clear();
         passField.setValue(pass);
         eMailField.shouldHave(Condition.attribute("aria-invalid", "false"));

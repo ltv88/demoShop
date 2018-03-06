@@ -4,10 +4,8 @@ import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+
 import static com.codeborne.selenide.Selenide.*;
 /**
  * Created by 88lit on 2/28/2018.
@@ -19,12 +17,10 @@ public class LoginPageTest {
             navigator.open("https://www.fashionette.de");
     }
 
-    @Test
-    public void loginTest() {
+    @Test(dataProvider = "loginTestPass", dataProviderClass = Params.class)
+    public void loginTest(String email, String pass) {
         Header header = new Header();
-        String email = "meflt88@gmail.com";
-        String pass = "qwe123";
-        header.openLoginPage().login(email,pass).getSlogan().shouldHave(Condition.text("Hallo serge"));
+        header.openLoginPage().login(email, pass).getSlogan().shouldHave(Condition.text("Hallo serge"));
     }
 
     @AfterClass

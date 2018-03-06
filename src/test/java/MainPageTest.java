@@ -13,10 +13,10 @@ public class MainPageTest {
     }
 
 
-    @Test
-    public void pickUpBrand(){
-        String brand = "Gucci";
+    @Test(dataProvider = "chooseBrand", dataProviderClass = Params.class)
+    public void pickUpBrand(String brand){
         Main main = new Main();
+
         main.chooseBrand(brand).getCategoryDescription().shouldHave(Condition.text(brand));
     }
 
