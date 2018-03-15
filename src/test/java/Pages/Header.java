@@ -1,3 +1,5 @@
+package Pages;
+
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -6,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$x;
 /**
  * Created by 88lit on 3/1/2018.
  */
-public class Header extends Main {
+public class Header extends HomePage {
 
     private SelenideElement logo = $("div.header__inner a.header__logo:nth-child(1)");
     private SelenideElement phone = $x("//div[@class=\"header__phone\"] //*[@href]");
@@ -19,12 +21,18 @@ public class Header extends Main {
     private SelenideElement logIn = $x("//a[@href='https://www.fashionette.de/login']");
     private SelenideElement search = $x("//div[@class='header__search-icon']");
 
+
     public Header() {
     }
 
-    public Login openLoginPage() {
+    public LoginPage openLoginPage() {
         logIn.click();
-        return new Login();
+        return new LoginPage();
+    }
+
+    public HomePage openHome() {
+        logo.click();
+        return new HomePage();
     }
 
     public void openSale() {
@@ -37,11 +45,6 @@ public class Header extends Main {
 
     public void openSearh() {
         search.click();
-    }
-
-    public Main openHome() {
-        logo.click();
-        return new Main();
     }
 
     public void openBags() {

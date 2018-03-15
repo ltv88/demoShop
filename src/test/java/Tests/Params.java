@@ -1,3 +1,5 @@
+package Tests;
+
 import org.testng.annotations.DataProvider;
 
 public class Params {
@@ -10,7 +12,7 @@ public class Params {
 
     @DataProvider(name = "loginTestFails")
     public static Object[][] loginFails() {
-        return new Object[][]{ {"meflt@mail.ru", "qwe123"}
+        return new Object[][]{ {"errortest@mail.ru", "2425"}
         };
     }
 
@@ -33,6 +35,4 @@ public class Params {
                 {"UGG"},
                 {"Stella McCartney"}};
     }
-
-
 }

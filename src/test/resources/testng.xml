@@ -3,13 +3,13 @@
 <suite name="Suite1" verbose="1" >
     <test name="loginTest" >
         <classes>
-            <class name="LoginPageTest" />
+            <class name="Tests.LoginPageTest" />
         </classes>
     </test>
 
     <test name="mainTest" >
         <classes>
-            <class name="MainPageTest"/>
+            <class name="Tests.HomePageTest"/>
         </classes>
     </test>
 
