@@ -1,18 +1,18 @@
 package Tests;
 
-import Pages.BasePage;
+import Pages.HomePage;
 import com.codeborne.selenide.Condition;
 import org.testng.annotations.Test;
 
 
 
-public class BasePageTest extends DriverManager{
+public class HomePageTest extends DriverManager{
 
     @Test(dataProvider = "chooseBrand", dataProviderClass = Params.class)
     public void pickUpBrand(String brand){
-        BasePage basePage = new BasePage();
+        HomePage homePage = new HomePage();
 
-        basePage.chooseBrand(brand)
+        homePage.chooseBrand(brand)
 
                 .getCategoryDescription().shouldHave(Condition.text(brand));
     }

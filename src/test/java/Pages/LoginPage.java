@@ -11,10 +11,8 @@ import static com.codeborne.selenide.Selenide.*;
  */
 public class LoginPage {
 
-    Header header;
-
     public LoginPage() {
-        this.header = new Header();
+
     }
 
     private SelenideElement logo = $("a.header__logo:nth-child(1) > img.logo-claim");

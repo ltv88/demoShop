@@ -9,7 +9,7 @@
 
     <test name="mainTest" >
         <classes>
-            <class name="Tests.BasePageTest"/>
+            <class name="Tests.HomePageTest"/>
         </classes>
     </test>
 

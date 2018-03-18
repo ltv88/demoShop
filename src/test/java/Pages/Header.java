@@ -29,9 +29,9 @@ public class Header {
         return new LoginPage();
     }
 
-    public BasePage openHome() {
+    public HomePage openHome() {
         logo.click();
-        return new BasePage();
+        return new HomePage();
     }
 
     public void openSale() {
