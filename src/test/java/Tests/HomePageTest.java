@@ -10,6 +10,7 @@ public class HomePageTest extends DriverManager{
 
     @Test(dataProvider = "chooseBrand", dataProviderClass = Params.class)
     public void pickUpBrand(String brand){
+        Thread.currentThread().getId();
         HomePage homePage = new HomePage();
 
         homePage.chooseBrand(brand)

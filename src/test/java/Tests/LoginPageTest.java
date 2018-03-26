@@ -15,7 +15,7 @@ public class LoginPageTest extends DriverManager {
 
     @Test(dataProvider = "loginTestPass", dataProviderClass = Params.class)
     public void loginPass(String email, String pass) {
-
+        System.out.println(":> id "+Thread.currentThread().getId());
         header.openLoginPage()
 
                 .login(email, pass)
@@ -25,7 +25,7 @@ public class LoginPageTest extends DriverManager {
 
     @Test(dataProvider = "loginTestFails", dataProviderClass = Params.class)
     public void loginFails(String email, String pass) {
-
+        System.out.println(":> id "+Thread.currentThread().getId());
         header.openLoginPage().login(email, pass);
 
         Assert.assertEquals(new LoginPage().isErrorTextVisible(), true);
