@@ -16,16 +16,12 @@ import static com.codeborne.selenide.Selenide.navigator;
  * Created by 88lit on 3/1/2018.
  */
 public class DriverManager {
-    WebDriver driver;
 
     @BeforeMethod
     public void getDriver() {
 //        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver/chromedriver.exe");
 //        driver = new ChromeDriver();
 //        driver.manage().window().maximize();
-//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-//        driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
-//        driver.get("https://www.fashionette.de");
 
         Configuration.browser = "chrome";
         navigator.open("https://www.fashionette.de");

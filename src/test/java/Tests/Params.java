@@ -16,6 +16,26 @@ public class Params {
         };
     }
 
+    @DataProvider(name = "errorEmail")
+    public static Object[][] validEmail() {
+        return new Object[][]{ {"", "qwe123"},
+                {"meflt88gmail.com","qwe123"}
+        };
+    }
+
+    @DataProvider(name = "errorPass")
+    public static Object[][] validPass() {
+        return new Object[][]{ {"meflt88@gmail.com", ""},
+                {"meflt88@gmail.com","qwe"}
+        };
+    }
+
+    @DataProvider(name = "loginValid")
+    public static Object[][] loginValid() {
+        return new Object[][]{ {"", ""}
+        };
+    }
+
     @DataProvider(name = "chooseBrand")
     public static Object[][] brands(){
         return new Object[][] {

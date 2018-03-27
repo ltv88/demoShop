@@ -26,6 +26,8 @@ public class LoginPage {
     private SelenideElement submitBtn = $("button[data-form-login-submit]");
     private SelenideElement forgotPass = $(By.cssSelector(".forgot-password-toggle"));
     private SelenideElement loginErrText = $(".login__errortext");
+    private SelenideElement emailErrText = $("#email-error");
+    private SelenideElement passErrText = $("#password-error");
 
     public AccountPage login(String email, String pass) {
         eMailField.clear();
@@ -35,6 +37,14 @@ public class LoginPage {
         submitBtn.getWrappedElement().click();
 
         return new AccountPage();
+    }
+
+    public boolean isEmailErrTextVisible(){
+        return emailErrText.exists();
+    }
+
+    public boolean isPassErrTextVisible(){
+        return passErrText.exists();
     }
 
     public boolean isErrorTextVisible(){
