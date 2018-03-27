@@ -32,4 +32,9 @@ public class LoginPageTest extends DriverManager {
 
     }
 
+    @Test
+    public void loginValidation(){
+
+    }
+
 }

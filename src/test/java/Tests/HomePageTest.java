@@ -18,5 +18,4 @@ public class HomePageTest extends DriverManager{
                 .getCategoryDescription().shouldHave(Condition.text(brand));
     }
 
-
 }
