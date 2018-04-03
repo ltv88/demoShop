@@ -1,6 +1,9 @@
 package Tests;
 
+import Pages.BasePage;
+import Pages.HomePage;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,24 +14,27 @@ import org.testng.annotations.BeforeMethod;
 import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Selenide.navigator;
+import static com.codeborne.selenide.Selenide.open;
 
 /**
  * Created by 88lit on 3/1/2018.
  */
-public class DriverManager {
+public class BaseTest {
+
+    public Selenide selenide;
+
+    public BaseTest() {
+        this.selenide = open();
+    }
 
     @BeforeMethod
     public void getDriver() {
-//        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver/chromedriver.exe");
-//        driver = new ChromeDriver();
-//        driver.manage().window().maximize();
-
         Configuration.browser = "chrome";
-        navigator.open("https://www.fashionette.de");
     }
 
     @AfterClass
     public void closeDriver() {
         WebDriverRunner.closeWebDriver();
     }
+
 }

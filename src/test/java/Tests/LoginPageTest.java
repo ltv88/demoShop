@@ -11,19 +11,21 @@ import org.testng.annotations.*;
  * Created by 88lit on 2/28/2018.
  */
 
-public class LoginPageTest extends DriverManager {
+public class LoginPageTest extends BaseTest {
+
      Header header = new Header();
+     LoginPage loginPage;
 
     @Test(dataProvider = "loginTestPass", dataProviderClass = Params.class)
-    public void loginPass(String email, String pass) {
+    public void loginPassed(String email, String pass) {
 
-        header.openLoginPage()
+        LoginPage login =  new Header().openLoginPage();
 
-                .login(email, pass)
+        AccountPage accountPage = login.login(email, pass);
 
-                .getSlogan().shouldHave(Condition.text("Hallo serge"));
+        accountPage.getSlogan().shouldHave(Condition.text("Hallo serge"));
 
-        new AccountPage().logout().isHomePage();
+        new AccountPage().logout().checkIsOpen();
     }
 
     @Test(dataProvider = "loginTestFails", dataProviderClass = Params.class)
@@ -48,9 +50,17 @@ public class LoginPageTest extends DriverManager {
         Assert.assertEquals(new LoginPage().isPassErrTextVisible(), true);
     }
 
-    @Test(dataProvider = "loginValid", dataProviderClass = Params.class)
-    public void loginValid(String email, String pass){
-        header.openLoginPage().login(email, pass);
+    @DataProvider(name = "emptyFields")
+    public static Object[][]emptyFieldsCase(){
+        return new Object[][]{
+                {"", ""}
+        };
+    }
+    @Test(dataProvider = "emptyFields")
+    public void cantLoginWithEmptyFields(String email, String pass){
+        LoginPage loginPage = header.openLoginPage();
+
+        loginPage.login(email, pass);
 
         Assert.assertEquals(new LoginPage().isEmailErrTextVisible(), true);
         Assert.assertEquals(new LoginPage().isPassErrTextVisible(), true);

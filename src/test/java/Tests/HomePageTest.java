@@ -2,11 +2,14 @@ package Tests;
 
 import Pages.HomePage;
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Selenide;
 import org.testng.annotations.Test;
 
 
 
-public class HomePageTest extends DriverManager{
+public class HomePageTest extends BaseTest {
+
+
 
     @Test(dataProvider = "chooseBrand", dataProviderClass = Params.class)
     public void pickUpBrand(String brand){
