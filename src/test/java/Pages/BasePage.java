@@ -17,7 +17,6 @@ public class BasePage {
     }
 
     public boolean checkIsOpen(){
-
         return WebDriverRunner.url().equals(this.url);
     }
 

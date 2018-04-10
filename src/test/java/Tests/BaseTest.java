@@ -25,13 +25,13 @@ public class BaseTest {
     public BaseTest() {
     }
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void getDriver() {
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver/chromedriver.exe");
         Configuration.browser = "chrome";
     }
 
-    @AfterClass
+    @AfterClass(alwaysRun = true)
     public void closeDriver() {
         WebDriverRunner.closeWebDriver();
     }

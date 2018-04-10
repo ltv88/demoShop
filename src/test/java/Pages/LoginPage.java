@@ -22,9 +22,7 @@ public class LoginPage  extends BasePage{
     private SelenideElement passwordErrorText = $("#password-error");
     private String pageUrl = "https://www.fashionette.de/login";
 
-    public LoginPage() {
-        open();
-    }
+    public LoginPage() {}
 
     @Override
     public LoginPage open() {
