@@ -14,6 +14,8 @@ import static com.codeborne.selenide.Selenide.*;
  */
 public class LoginPage  extends BasePage{
 
+//    private String pageUrl = "https://www.fashionette.de/login";
+
     private SelenideElement eMailField = $(By.xpath("//input[@name='email']"));
     private SelenideElement passwordField = $(By.xpath("//input[@name='password']"));
     private SelenideElement submitBtn = $("button[data-form-login-submit]");
@@ -21,15 +23,8 @@ public class LoginPage  extends BasePage{
     private SelenideElement emailErrorText = $("#email-error");
     private SelenideElement passwordErrorText = $("#password-error");
 
-    public LoginPage(Selenide selenide) {
-        super(selenide);
-        this.url = "https://www.fashionette.de/login";
-    }
-
-    @Override
-    public void open() {
-        Selenide.open(url);
-        PageFactory.initElements(WebDriverRunner.getWebDriver(), this);
+    public LoginPage() {
+        this.pageUrl = "https://www.fashionette.de/login";
     }
 
     public AccountPage login(String email, String pass) {
@@ -39,7 +34,7 @@ public class LoginPage  extends BasePage{
         passwordField.setValue(pass);
         submitBtn.getWrappedElement().click();
 
-        return new AccountPage(selenide);
+        return new AccountPage();
     }
 
     public boolean isEmailErrTextVisible(){

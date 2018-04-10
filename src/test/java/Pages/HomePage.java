@@ -11,19 +11,14 @@ public class HomePage extends BasePage {
 
     private SelenideElement goShopLink = $x("//a[@class='shooting-bag__stage__link']");
     private ElementsCollection brandsLinks = $$x("//ul[@id='brands'] //li");
-
+//    private String pageUrl = "https://www.fashionette.de";
     Header header;
 
-    public HomePage(Selenide selenide) {
-        super(selenide);
+    public HomePage() {
         this.header = new Header();
-        this.url = "https://www.fashionette.de";
+        this.pageUrl = "https://www.fashionette.de";
     }
 
-    @Override
-    public void open() {
-        selenide.open(this.url);
-    }
 
     public ProductListPage chooseBrand(String brandName) {
         for (SelenideElement brand : brandsLinks) {
@@ -36,6 +31,6 @@ public class HomePage extends BasePage {
     }
 
     public boolean checkIsOpen() {
-        return WebDriverRunner.url().equals(this.url);
+        return WebDriverRunner.url().equals(pageUrl);
     }
 }

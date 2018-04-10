@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class HomePageTest extends BaseTest {
 
-
+    HomePage homePage;
 
     @Test(dataProvider = "chooseBrand", dataProviderClass = Params.class)
     public void pickUpBrand(String brand){

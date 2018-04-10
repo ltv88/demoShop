@@ -7,20 +7,17 @@ import org.openqa.selenium.support.PageFactory;
 
 public class BasePage {
 
-    Selenide selenide;
-    public String url;
+    public String pageUrl;
 
-    public BasePage(Selenide selenide){
-        this.selenide = selenide;
-        PageFactory.initElements(WebDriverRunner.getWebDriver(), this);
+    public BasePage(){
     }
 
     public void open(){
-        selenide.open(url);
+        Selenide.open(pageUrl);
     }
 
     public boolean checkIsOpen(){
-        return WebDriverRunner.url().equals(url);
+        return WebDriverRunner.url().equals(pageUrl);
     }
 
 }

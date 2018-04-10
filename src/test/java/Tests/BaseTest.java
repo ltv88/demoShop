@@ -10,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 
 import java.util.concurrent.TimeUnit;
 
@@ -21,18 +22,16 @@ import static com.codeborne.selenide.Selenide.open;
  */
 public class BaseTest {
 
-    public Selenide selenide;
-
     public BaseTest() {
-        this.selenide = open();
     }
 
-    @BeforeMethod
+    @BeforeClass(alwaysRun = true)
     public void getDriver() {
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver/chromedriver.exe");
         Configuration.browser = "chrome";
     }
 
-    @AfterClass
+    @AfterClass(alwaysRun = true)
     public void closeDriver() {
         WebDriverRunner.closeWebDriver();
     }

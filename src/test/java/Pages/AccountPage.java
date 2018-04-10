@@ -1,5 +1,4 @@
 package Pages;
-
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
@@ -15,19 +14,21 @@ public class AccountPage extends BasePage {
     private ElementsCollection accountItems = $$("[class=\"account__item\"]");
     private SelenideElement newsLetter = $("#footer-newsletter");
     private SelenideElement logoutBtn = $(".account__logout");
+//    private String pageUrl = "https://www.fashionette.de/account/customer";
 
-    public AccountPage(Selenide selenide){
-        super(selenide);
-        this.url = "https://www.fashionette.de/account/customer";
-        PageFactory.initElements(WebDriverRunner.getWebDriver(), this);
+
+    public AccountPage(){
+        this.pageUrl = "https://www.fashionette.de/account/customer";
     }
+
 
     public HomePage logout(){
         logoutBtn.click();
-        return new HomePage(selenide);
+        return new HomePage();
     }
 
     public SelenideElement getSlogan() {
         return slogan;
     }
 }
+
