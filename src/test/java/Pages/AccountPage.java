@@ -15,19 +15,18 @@ public class AccountPage extends BasePage {
     private ElementsCollection accountItems = $$("[class=\"account__item\"]");
     private SelenideElement newsLetter = $("#footer-newsletter");
     private SelenideElement logoutBtn = $(".account__logout");
+    private String pageUrl = "https://www.fashionette.de/account/customer";
 
-    public AccountPage(Selenide selenide){
-        super(selenide);
-        this.url = "https://www.fashionette.de/account/customer";
-        PageFactory.initElements(WebDriverRunner.getWebDriver(), this);
+    public AccountPage(){
     }
 
     public HomePage logout(){
         logoutBtn.click();
-        return new HomePage(selenide);
+        return new HomePage();
     }
 
     public SelenideElement getSlogan() {
         return slogan;
     }
+
 }

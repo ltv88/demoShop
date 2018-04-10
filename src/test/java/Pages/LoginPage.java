@@ -20,16 +20,16 @@ public class LoginPage  extends BasePage{
     private SelenideElement loginErrorText = $(".login__errortext");
     private SelenideElement emailErrorText = $("#email-error");
     private SelenideElement passwordErrorText = $("#password-error");
+    private String pageUrl = "https://www.fashionette.de/login";
 
-    public LoginPage(Selenide selenide) {
-        super(selenide);
-        this.url = "https://www.fashionette.de/login";
+    public LoginPage() {
+        open();
     }
 
     @Override
-    public void open() {
-        Selenide.open(url);
-        PageFactory.initElements(WebDriverRunner.getWebDriver(), this);
+    public LoginPage open() {
+        Selenide.open(pageUrl);
+        return new LoginPage();
     }
 
     public AccountPage login(String email, String pass) {
@@ -39,7 +39,7 @@ public class LoginPage  extends BasePage{
         passwordField.setValue(pass);
         submitBtn.getWrappedElement().click();
 
-        return new AccountPage(selenide);
+        return new AccountPage();
     }
 
     public boolean isEmailErrTextVisible(){

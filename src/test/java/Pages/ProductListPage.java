@@ -14,7 +14,6 @@ public class ProductListPage extends HomePage {
     private SelenideElement categoryDescription = $(".listing-page__display-name__text");
 
     public ProductListPage(){
-
     }
 
     public SelenideElement getCategoryDescription(){

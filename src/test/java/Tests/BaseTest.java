@@ -21,14 +21,13 @@ import static com.codeborne.selenide.Selenide.open;
  */
 public class BaseTest {
 
-    public Selenide selenide;
 
     public BaseTest() {
-        this.selenide = open();
     }
 
     @BeforeMethod
     public void getDriver() {
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         Configuration.browser = "chrome";
     }
 
