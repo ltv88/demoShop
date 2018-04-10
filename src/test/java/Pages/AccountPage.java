@@ -14,7 +14,6 @@ public class AccountPage extends BasePage {
     private ElementsCollection accountItems = $$("[class=\"account__item\"]");
     private SelenideElement newsLetter = $("#footer-newsletter");
     private SelenideElement logoutBtn = $(".account__logout");
-//    private String pageUrl = "https://www.fashionette.de/account/customer";
 
 
     public AccountPage(){
@@ -30,5 +29,6 @@ public class AccountPage extends BasePage {
     public SelenideElement getSlogan() {
         return slogan;
     }
+
 }
 
