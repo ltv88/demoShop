@@ -3,18 +3,40 @@ package Tests;
 import Pages.HomePage;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 
 
 public class HomePageTest extends BaseTest {
 
-    HomePage homePage;
+    HomePage homePage = new HomePage();
 
-    @Test(dataProvider = "chooseBrand", dataProviderClass = Params.class)
-    public void pickUpBrand(String brand){
+    @DataProvider(name = "chooseAllBrands")
+    public static Object[][] chooseAllBrandsCase() {
+        return new Object[][]{
+                {"Michael Kors"},
+                {"MCM"},
+                {"Prada"},
+                {"Chloé"},
+                {"Gucci"},
+                {"Saint Laurent"},
+                {"Furla"},
+                {"Lauren Ralph Lauren"},
+                {"Christian Louboutin"},
+                {"Valentino"},
+                {"Balenciaga"},
+                {"Miu Miu"},
+                {"Burberry"},
+                {"UGG"},
+                {"Stella McCartney"}
+        };
+    }
+
+    @Test(dataProvider = "chooseAllBrands")
+    public void pickUpBrand(String brand) {
         Thread.currentThread().getId();
-        HomePage homePage = new HomePage();
+        homePage.open();
 
         homePage.chooseBrand(brand)
 

@@ -28,9 +28,8 @@ public class LoginPage  extends BasePage{
     }
 
     public AccountPage login(String email, String pass) {
-        eMailField.clear();
+
         eMailField.setValue(email);
-        passwordField.clear();
         passwordField.setValue(pass);
         submitBtn.getWrappedElement().click();
 

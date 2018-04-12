@@ -1,9 +1,19 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="LoginPage" verbose="10" parallel="classes" thread-count="1" >
+<suite name="LoginPage" verbose="10" parallel="methods" thread-count="4" >
     <test name="loginTest" group-by-instances="true">
+        <parameter name="email" value="meflt88@gmail.com"/>
+        <parameter name="password" value="qwe123"/>
+
+        <parameter name="badEmail" value="errortest@mail.ru"/>
+        <parameter name="badPassword" value="12321"/>
+
+        <parameter name="emptyEmail" value=""/>
+        <parameter name="emptyPassword" value=""/>
+
         <classes>
             <class name="Tests.LoginPageTest" />
         </classes>
+
     </test>
 </suite>
